@@ -79,9 +79,9 @@ def clear():
 	subprocess.call("rm *.txt", shell=True)
 
 def main():
-	set_batch1 = "cocurrent_set_1.txt"
-	set_batch2 = "cocurrent_set_2.txt"
-	get_batch = "cocurrent_get.txt"
+	set_batch1 = "concurrent_set_1.txt"
+	set_batch2 = "concurrent_set_2.txt"
+	get_batch = "concurrent_get.txt"
 	balance_batch = "balancing.txt"
 	result = "result.txt"
 
@@ -89,7 +89,7 @@ def main():
 		print "use it as: python batcher.py check <set_batch1> <set_batch2> <get_batch> <result>"
 		print "or: python batcher.py clear"
 		print "or: python batcher.py generate <set_batch1> <set_batch2> <get_batch> <balancing_batch>"
-		print "Example: python batcher.py check cocurrent_set_1.txt cocurrent_set_2.txt cocurrent_get.txt result.txt"
+		print "Example: python batcher.py check concurrent_set_1.txt concurrent_set_2.txt concurrent_get.txt result.txt"
 		exit(0)
 
 	if sys.argv[1] == 'check':
