@@ -12,14 +12,14 @@ def generate_set_batch(set_batch_filename, num_writes, get_ratio, num_keys):
 
 	with open(set_batch_filename, 'w') as file:
 		for index, kv_pair in enumerate(kv_pairs):
-			file.write("SET {} {}\n".format(kv_pair[0], kv_pair[1]))
+			file.write("SET k{} {}\n".format(kv_pair[0], kv_pair[1]))
 			if int(index*get_ratio) != int((index-1)*get_ratio):
-				file.write("GET {}\n".format(kv_pair[0]))
+				file.write("GET k{}\n".format(kv_pair[0]))
 
 def generate_get_batch(get_batch_filename, num_keys):
 	with open(get_batch_filename, 'w') as file:
 		for key in range(num_keys):
-			file.write("GET {}\n".format(key))
+			file.write("GET k{}\n".format(key))
 
 def generate_batch_files(set_batch1, set_batch2, get_batch, balancing_batch):
 	# concurrent set/get testing
